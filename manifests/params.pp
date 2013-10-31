@@ -17,7 +17,7 @@ class auditd::params {
   ### Application related parameters
 
   $package = $::operatingsystem ? {
-    default => 'auditd',
+    default => 'audit',
   }
 
   $service = $::operatingsystem ? {
@@ -41,11 +41,11 @@ class auditd::params {
   }
 
   $config_dir = $::operatingsystem ? {
-    default => '/etc/auditd',
+    default => '/etc/audit',
   }
 
   $config_file = $::operatingsystem ? {
-    default => '/etc/auditd/auditd.conf',
+    default => '/etc/audit/auditd.conf',
   }
 
   $config_file_mode = $::operatingsystem ? {
