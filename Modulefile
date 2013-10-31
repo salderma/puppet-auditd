@@ -1,0 +1,12 @@
+name 'puppet-auditd'
+version '1.0.0'
+
+author 'Sean Alderman'
+license 'Apache2'
+project_page 'http://alderhost.net'
+source 'https://github.com/salderma/puppet-auditd'
+summary 'Puppet module for auditd'
+description 'This module installs and manages auditd. Check README for details.'
+dependency 'example42/puppi', '>=2.0.0'
+dependency 'example42/firewall', '>=2.0.0'
+dependency 'example42/monitor', '>=2.0.0'
