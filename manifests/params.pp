@@ -17,7 +17,8 @@ class auditd::params {
   ### Application related parameters
 
   $package = $::operatingsystem ? {
-    default => 'audit',
+    /(?i:Debian|Ubuntu|Mint)/ => 'auditd',
+    default                   => 'audit',
   }
 
   $service = $::operatingsystem ? {
