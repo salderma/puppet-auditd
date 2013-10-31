@@ -16,8 +16,9 @@ For detailed info about the logic and usage patterns of Example42 modules check 
 
 ## CONTINUOUS TESTING
 
-Branch Master:[![Build Status](https://travis-ci.org/salderma/puppet-auditd.png?branch=master)](https://travis-ci.org/salderma/puppet-auditd)
-Branch Develop:[![Build Status Develop](https://travis-ci.org/salderma/puppet-auditd.png?branch=develop)](https://travis-ci.org/salderma/puppet-auditd)
+Branch Master: [![Build Status](https://travis-ci.org/salderma/puppet-auditd.png?branch=master)](https://travis-ci.org/salderma/puppet-auditd)
+
+Branch Develop: [![Build Status](https://travis-ci.org/salderma/puppet-auditd.png?branch=develop)](https://travis-ci.org/salderma/puppet-auditd)
 
 ## USAGE - Basic management
 
