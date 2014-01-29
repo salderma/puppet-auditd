@@ -17,7 +17,6 @@ class auditd::params {
   ### Application related parameters
 
   $package = $::operatingsystem ? {
-    /(?i:Debian|Ubuntu|Mint)/ => 'auditd',
     default                   => 'audit',
   }
 
@@ -62,7 +61,6 @@ class auditd::params {
   }
 
   $config_file_init = $::operatingsystem ? {
-    /(?i:Debian|Ubuntu|Mint)/ => '/etc/default/auditd',
     default                   => '/etc/sysconfig/auditd',
   }
 
@@ -82,9 +80,6 @@ class auditd::params {
     default => '/var/log/audit/auditd.log',
   }
 
-  $port = ''
-  $protocol = 'tcp'
-
   # General Settings
   $my_class = ''
   $source = ''
@@ -102,10 +97,6 @@ class auditd::params {
   $monitor = false
   $monitor_tool = ''
   $monitor_target = $::ipaddress
-  $firewall = false
-  $firewall_tool = ''
-  $firewall_src = '0.0.0.0/0'
-  $firewall_dst = $::ipaddress
   $puppi = false
   $puppi_helper = 'standard'
   $debug = false

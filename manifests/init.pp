@@ -394,16 +394,6 @@ class auditd (
 
   ### Service monitoring, if enabled ( monitor => true )
   if $auditd::bool_monitor == true {
-    if $auditd::port != '' {
-      monitor::port { "auditd_${auditd::protocol}_${auditd::port}":
-        protocol => $auditd::protocol,
-        port     => $auditd::port,
-        target   => $auditd::monitor_target,
-        tool     => $auditd::monitor_tool,
-        enable   => $auditd::manage_monitor,
-        noop     => $auditd::bool_noops,
-      }
-    }
     if $auditd::service != '' {
       monitor::process { 'auditd_process':
         process  => $auditd::process,
@@ -417,23 +407,6 @@ class auditd (
       }
     }
   }
-
-
-  ### Firewall management, if enabled ( firewall => true )
-  if $auditd::bool_firewall == true and $auditd::port != '' {
-    firewall { "auditd_${auditd::protocol}_${auditd::port}":
-      source      => $auditd::firewall_src,
-      destination => $auditd::firewall_dst,
-      protocol    => $auditd::protocol,
-      port        => $auditd::port,
-      action      => 'allow',
-      direction   => 'input',
-      tool        => $auditd::firewall_tool,
-      enable      => $auditd::manage_firewall,
-      noop        => $auditd::bool_noops,
-    }
-  }
-
 
   ### Debugging, if enabled ( debug => true )
   if $auditd::bool_debug == true {
