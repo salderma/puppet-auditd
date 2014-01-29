@@ -115,7 +115,7 @@ describe 'auditd' do
   describe 'Test OldGen Module Set Integration' do
     let(:params) { {:monitor => "yes" , :monitor_tool => "puppi" } }
     it { should contain_monitor__process('auditd_process').with_tool('puppi') }
-    it { should contain_puppi__ze('auditd').with_ensure('present') }
+    it { should contain_puppi__ze('audit').with_ensure('present') }
   end
 
   describe 'Test params lookup' do
