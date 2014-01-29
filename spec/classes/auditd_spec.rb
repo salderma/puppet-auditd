@@ -112,12 +112,6 @@ describe 'auditd' do
     it { should contain_monitor__process('auditd_process').with_tool('puppi') }
   end
 
-  describe 'Test OldGen Module Set Integration' do
-    let(:params) { {:monitor => "yes" , :monitor_tool => "puppi" } }
-    it { should contain_monitor__process('auditd_process').with_tool('puppi') }
-    it { should contain_puppi__ze('audit').with_ensure('present') }
-  end
-
   describe 'Test params lookup' do
     let(:facts) { { :monitor => true , :ipaddress => '10.42.42.42' } }
     let(:params) { { :port => '42' } }
